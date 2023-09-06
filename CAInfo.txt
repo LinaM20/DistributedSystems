@@ -1,0 +1,7 @@
+multi threading 
+executors
+can be simple thread management 
+
+test three connections
+demo: code and running - in the lab
+should work in lab environment 

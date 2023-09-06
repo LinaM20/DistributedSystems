@@ -1,0 +1,17 @@
+The design consists of the following components:
+
+Client applications: These are the client programs that request scores from the service.
+Score service: This is the service that provides scores to the client applications. It consists of a server program that runs on a server machine and exposes a set of remote methods that clients can invoke to request scores.
+Database: This is the database that stores the scores and other relevant data. The database can be accessed by the server program to retrieve and update scores.
+Firewall: This is a security measure that controls incoming and outgoing network traffic to the server machine. It allows traffic from client applications and blocks unauthorized traffic.
+This design is based on the client-server model, where the client applications act as clients and the score service acts as the server. The client applications send requests to the server to retrieve scores, and the server responds with the requested data.
+
+The use of a remote interface and remote method invocation (RMI) allows the client applications to invoke methods on the server as if it were a local object. This makes it easy for client applications to access the service and reduces the complexity of the client-server communication.
+
+One strength of this design is that it allows client applications to access the service from any location, as long as they have a network connection to the server. This makes it easy to provide the service to a large number of clients.
+
+Another strength is that the use of a database allows the server to store and retrieve scores efficiently. This enables the service to handle a large number of requests and updates without causing performance issues.
+
+A weakness of this design is that it relies on a central server to provide the service. If the server goes down, the service will become unavailable to the client applications. To mitigate this risk, the server can be deployed in a redundant configuration, such as in a cluster or with load balancing, to improve reliability.
+
+Another weakness is that the service may become a bottleneck if it receives a large number of requests simultaneously. To address this issue, the server can be scaled out by adding more machines to the server cluster or by using a distributed database.
